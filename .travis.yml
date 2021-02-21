@@ -19,5 +19,5 @@ after_success:
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
   - docker push mactto3487/docker-frontend
-  - docker push mactto3487/backend
-  - docker push mactto3487/nginx
+  - docker push mactto3487/docker-backend
+  - docker push mactto3487/docker-nginx
