@@ -21,3 +21,16 @@ after_success:
   - docker push mactto3487/docker-frontend
   - docker push mactto3487/docker-backend
   - docker push mactto3487/docker-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eba-5mvfqrer.us-east-2."
+  app: "docker-fullstack-app"
+  enf: "Dockerfullstackapp-env"
+  bucket_name: elasticbeanstalk-us-east-2-523590378911
+  bucket_path: "docker-fullstack-app"
+  on:
+    branch: master
+  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
